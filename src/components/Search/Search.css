@@ -1,0 +1,13 @@
+form {
+  display: flex;
+  justify-content: center;
+}
+
+#search {
+  text-align: center;
+  width: 25vw;
+  border-radius: 10px;
+}
+#searcher :hover {
+  box-shadow: 5px 3px 2.5px #999;
+}

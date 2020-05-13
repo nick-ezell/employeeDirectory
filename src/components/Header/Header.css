@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.jumbotron {
+  font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+  background-color: #4aaaa5;
+  box-shadow: 5px 3px 2.5px #999;
+  text-shadow: 1px 1px transparent, -1px -1px black;
+}
