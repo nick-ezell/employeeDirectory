@@ -12,13 +12,22 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-// Add routes, both API and view
-app.use(routes);
 
 // Connect to the Mongo DB
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist"
 );
+
+//Listening for deployment env variable to send built app
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "./client/build")));
+}
+//React app init
+if (process.env.NODE_ENV === "production") {
+  app.get("*", (req, res) =>
+    res.sendFile(path.join(__dirname, "./client/build/index.html"))
+  );
+}
 
 // Start the API server
 app.listen(PORT, function () {
